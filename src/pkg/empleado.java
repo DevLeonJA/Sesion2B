@@ -9,7 +9,7 @@ public class empleado {
 		float salarioBase = 0;
 		if (tipo == TipoEmpleado.Vendedor) {
 			salarioBase = 2000;
-			if (ventasMes >= 1000) {
+			if (ventasMes >= 1000  && ventasMes < 1500) {
 				salarioBase += 100;
 			} else if (ventasMes >= 1500) {
 				salarioBase += 200;
@@ -17,7 +17,7 @@ public class empleado {
 			salarioBase = salarioBase + (30 * horasExtras);
 		} else if (tipo == TipoEmpleado.Encargado) {
 			salarioBase = 2500;
-			if (ventasMes >= 1000) {
+			if (ventasMes >= 1000 && ventasMes < 1500) {
 				salarioBase += 100;
 			} else if (ventasMes >= 1500) {
 				salarioBase += 200;
@@ -32,9 +32,9 @@ public class empleado {
 		if (nominaBruta < 2100) {
 			return nominaBruta;
 		} else if (nominaBruta >= 2500) {
-			return (float) (nominaBruta * 0.82);
+			return  (nominaBruta * 0.82f);
 		} else {
-			return (float) (nominaBruta * 0.85);
+			return  (nominaBruta * 0.85f);
 		}
 	}
 }
